@@ -17,7 +17,8 @@ resource "aws_instance" "myec2" {
   ami           = "ami-08fe36427228eddc4"
   instance_type = "t2.micro"
   vpc_security_group_ids=[aws_security_group.web-sg.id]
-  key_name="linux"  tags={
+  key_name="linux" 
+tags={
  Name="web-server"
 }
 user_data= <<-EOF
@@ -36,7 +37,8 @@ ingress {
  to_port=80
 protocol="tcp"
 cidr_blocks= ["0.0.0.0/0"]
-}  ingress {
+}  
+ingress {
  from_port=22
  to_port=22
 protocol="tcp"
