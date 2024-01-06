@@ -12,7 +12,8 @@ provider "aws" {
 access_key = var.AWS_ACCESS_KEY
 secret_key = var.AWS_SECRET_KEY
 region = "ap-south-1"
-} resource "aws_instance" "myec2" {
+}
+resource "aws_instance" "myec2" {
   ami           = "ami-08fe36427228eddc4"
   instance_type = "t2.micro"
   vpc_security_group_ids=[aws_security_group.web-sg.id]
